@@ -1,0 +1,14 @@
+{
+    "name": "salarmehr/kickoff",
+    "minimum-stability": "dev",
+    "description": "Kick off your web project!",
+    "type": "template",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Reza",
+            "email": "salarmehr@gmail.com"
+        }
+    ],
+    "require": {}
+}

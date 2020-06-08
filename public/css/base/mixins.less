@@ -1,0 +1,31 @@
+.topRadios(@radios:@radius){
+  border-top-right-radius: @radios;
+  border-top-left-radius: @radios;
+}
+
+.bottomRadios(@radios:@radius){
+  border-bottom-right-radius: @radios;
+  border-bottom-left-radius: @radios;
+}
+
+.user-select(@user-select:none) {
+  -webkit-user-select: @user-select;
+  -moz-user-select: @user-select;
+  -ms-user-select: @user-select;
+  user-select: @user-select;
+}
+
+.placeholder {
+  ::-webkit-input-placeholder {
+  @content
+  }
+  :-moz-placeholder {
+  @content
+  }
+  ::-moz-placeholder {
+  @content
+  }
+  :-ms-input-placeholder {
+  @content
+  }
+}

@@ -1,0 +1,7 @@
+# temporary files and folders
+**.temp
+**.temp.*
+**/temp.*
+**/temp
+
+.idea
