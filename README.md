@@ -1,6 +1,6 @@
 # Kickoff
 
-Scaffolding to kick up to deevlop a web project
+Scaffolding to kick up to develop a web project
 
 # How to use?
 Apart from a simple zip download, you can run:
