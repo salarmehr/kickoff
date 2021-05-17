@@ -1,9 +1,9 @@
-.topRadios(@radios:@radius){
+.topRadios(@radios:@radius) {
   border-top-right-radius: @radios;
   border-top-left-radius: @radios;
 }
 
-.bottomRadios(@radios:@radius){
+.bottomRadios(@radios:@radius) {
   border-bottom-right-radius: @radios;
   border-bottom-left-radius: @radios;
 }
@@ -15,17 +15,20 @@
   user-select: @user-select;
 }
 
-.placeholder {
-  ::-webkit-input-placeholder {
-  @content
+.placeholder(@rules) {
+  &::-webkit-input-placeholder {
+    @rules();
   }
-  :-moz-placeholder {
-  @content
+
+  &:-moz-placeholder {
+    @rules();
   }
-  ::-moz-placeholder {
-  @content
+
+  &::-moz-placeholder {
+    @rules();
   }
-  :-ms-input-placeholder {
-  @content
+
+  &:-ms-input-placeholder {
+    @rules();
   }
 }

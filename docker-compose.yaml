@@ -1,0 +1,55 @@
+version: "3.7"
+services:
+  apache:
+    container_name: ${APP_NAME}-apache
+    build: 'docker/apache/'
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - frontend
+      - backend
+    ports:
+      - ${APP_IP}:80:80
+      - ${APP_IP}:443:443
+    volumes:
+      - ./:/srv/
+  php:
+    container_name: ${APP_NAME}-php
+    build: 'docker/php/'
+    networks:
+      - backend
+    volumes:
+      - ./:/srv/
+      - ${SSH_HOME:-~/.ssh}:/tmp/.ssh
+      - ${COMPOSER_CACHE_PATH:-~/.composer}:/root/.composer
+      - npm:/root/.npm
+    ports:
+      - ${APP_IP}:6001:6001
+#      - ${APP_IP}:9003:9003
+  mysql:
+    container_name: ${APP_NAME}-mysql
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - backend
+    environment:
+      - MYSQL_DATABASE=jimble
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - ./storage/mysql/:/var/lib/mysql/
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+    #      - ./storage/mysql/conf.d:/etc/mysql/conf.d
+    ports:
+      - ${APP_IP}:3306:3306
+  redit:
+    container_name: ${APP_NAME}-redis
+    build: 'docker/redis/'
+#        volumes:
+#            - ./storage/redis/:/var/lib/redis/
+volumes:
+  npm:
+
+networks:
+  frontend:
+  backend:
