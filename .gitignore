@@ -4,13 +4,5 @@
 **/temp.*
 **/temp
 
-# ignored by extension
-**/*.css
-**/*.css.map
-
-# exact files
-.idea
-.env
-
-# excact folders
-storage
+*.css
+*.css.map

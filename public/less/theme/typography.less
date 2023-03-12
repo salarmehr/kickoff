@@ -1,0 +1,70 @@
+// font sizes
+@xx-small: xx-small;
+@x-small: x-small;
+@small: small;
+@medium: medium;
+@large: large;
+@x-large: x-large;
+@xx-large: xx-large;
+@xxx-large: xxx-large;
+
+// font weights
+// see https://learn.microsoft.com/en-us/typography/opentype/spec/os2#usweightclass
+@thin: 100;
+@light: 300;
+@normal: normal; // 400
+@bold: bold; // 700
+
+@import "colors";
+@import "fonts";
+
+.footnote() {
+  .p();
+  font-size: @medium;
+  font-weight: @normal;
+}
+
+.p() {
+  font-size: @medium;
+  color: @8;
+  font-weight: @normal;
+}
+
+.h5() {
+  .p();
+  font-weight: @medium;
+}
+
+.h4() {
+  .h5();
+  font-weight: @normal;
+  font-size: @medium;
+}
+
+.h3() {
+  .h4();
+  font-size: @medium;
+  font-weight: @normal;
+}
+
+.h2() {
+  .h3();
+  font-size: @medium;
+  font-weight: @normal;
+}
+
+.h1() {
+  .h2();
+  font-size: @medium;
+  font-weight: @normal;
+}
+
+.a() {
+  color: @link;
+  text-decoration: none;
+
+  &:hover {
+    color: @link;
+    text-decoration: none;
+  }
+}

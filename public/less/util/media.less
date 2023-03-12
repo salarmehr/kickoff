@@ -1,0 +1,50 @@
+
+@tv: "screen and (min-width: #{@tv-min})";
+@computer: "(min-width: #{@computerWidth-min}) and (max-width: #{@computerWidth-max})";
+@tablet: "(min-width: #{@tabletWidth-min}) and (max-width: #{@tabletWidth-max})";
+@mobile: "(max-width: #{@mobileWidth-max})";
+@portable-landscape: "only screen and (max-width: #{@tabletWidth-med})"; // mobile and tabletmax1023
+@portable: "only screen and (max-width: #{@tabletWidth-max})"; // mobile and table
+@desktop: "only screen and (min-width: #{@computerWidth-min})"; // computer and tv
+
+// IE 10 and 11 only rules
+// https://paper-leaf.com/blog/2014/09/targeting-ie-10-11-browsers-css/
+@ie: "(screen) and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)";
+@ie-mobile: "#{@ie} and #{@mobile}";
+@ie-computer: "#{@ie} and #{@computer}";
+@ie-tablet: "#{@ie} and #{@tablet}";
+
+// example
+//body {
+//
+//  @media #{@tv }{
+//    background: yellow;
+//    div::after{
+//      content:'tv'
+//    }
+//  }
+//
+//  @media #{@computer}{
+//    background: red;
+//    div::after{
+//      content:'computer'
+//    }
+//
+//  }
+//
+//  @media #{@tablet }{
+//    background: blue;
+//    div::after{
+//      content:'tablet'
+//    }
+//
+//  }
+//
+//  @media #{@mobile }{
+//    background: yellow;
+//    div::after{
+//      content:'mobile'
+//    }
+//  }
+//
+//}
